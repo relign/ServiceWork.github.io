@@ -1,8 +1,9 @@
 // The files we want to cache
 var CACHE_NAME = 'image-cache';
+var baseUrl = '/ServiceWork.github.io';
 var urlsToCache = [
-  '/image/logo.jpg',
-  '/js/jquery.js'
+  baseUrl + '/image/logo.jpg',
+  baseUrl + '/js/jquery.js'
 ];
 
 // Set the callback for the install step
