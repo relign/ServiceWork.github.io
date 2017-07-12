@@ -5,8 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script src="/js/jquery.js"></script>
 </head>
 <body>
     <h1>Hello World!</h1>
+    <div>
+        <h4>Service Work Cache</h4>
+        <img src="/image/logo.jpg" alt="">
+    </div>
+    <div>
+        <h4>Not Cache</h4>
+        <img src="/image/test.jpg" alt="">
+    </div>
 </body>
+<script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js').then(function (registeration) {
+            // Registration was successful
+            console.log('ServiceWorker registration successful with scope: ',    registeration.scope);
+        }).catch(function (err) {
+            // registration failed 
+            console.log('ServiceWorker registration failed: ', err);
+        });
+        // 上面的代码检查 service worker API 是否可用，如果可用， /sw.js 这个文件将会作为 service worker 被注册。
+
+        // 如果这个 service worker 已经被注册过，浏览器会自动忽略上面的代码。
+
+        // 有一个特别要注意是 service worker 文件的路径。你一定注意到，在这个例子中，service worker 文件被放在这个
+        // 域的根目录下，这意味着 service worker是跟网站同源的。换句话说，这个 service worker 将会获取到这个域下的所有 
+        // fetch 事件。如果 service worker文件注册到/example/sw.js ，那么 service worker 只能收到 /example/ 路径
+        // 下的 fetch 事件（比如： /example/page1/, /example/page2/）。
+    }
+</script>
 </html>
