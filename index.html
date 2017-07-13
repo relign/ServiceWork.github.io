@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1>Hello World!</h1>
-    <!-- <h2>变化</h2> -->
+     <h2>变化</h2> 
     <div>
         <h4>Service Work Cache</h4>
         <img src="./image/logo.jpg" alt="">
@@ -21,7 +21,7 @@
 </body>
 <script>
     if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/ServiceWork.github.io/sw.js').then(function (registeration) {
+        navigator.serviceWorker.register('/sw.js', {scope: '/ServiceWork.github.io'}).then(function (registeration) {
             // Registration was successful
             console.log('ServiceWorker registration successful with scope: ',    registeration.scope);
         }).catch(function (err) {
