@@ -22,7 +22,7 @@
 <script>
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', function () {
-             navigator.serviceWorker.register('/ServiceWork.github.io/sw.js', {scope: '/ServiceWork.github.io'}).then(function (registeration) {
+             navigator.serviceWorker.register('/ServiceWork.github.io/sw.js', {scope: '/ServiceWork.github.io/'}).then(function (registeration) {
                 // Registration was successful
                 console.log('ServiceWorker registration successful with scope: ',    registeration.scope);
             }).catch(function (err) {
